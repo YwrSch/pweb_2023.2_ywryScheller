@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <title>Site foda hidrate-se</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    </head>
+    <body>
+        <div class="w3-bar w3-black w3-xlarge">
+            <a href="index.html" class="w3-bar-item w3-button w3-mobile w3-black">Inicio</a>
+            <a href="adcionarPessoa.html" class="w3-bar-item w3-button w3-mobile w3-red">Adcionar Pessoa</a>
+            <a href="listarPessoa.html" class="w3-bar-item w3-button w3-mobile w3-black">Listar Pessoas</a>
+            <a href="noticias.html" class="w3-bar-item w3-button w3-mobile w3-black w3-right">Notícias</a>
+            <a href="sobre.html" class="w3-bar-item w3-button w3-mobile w3-black w3-right">Sobre o site</a>
+            <a href="contato.html" class="w3-bar-item w3-button w3-mobile w3-black w3-right">Contato</a> 
+        </div>
+        <div>
+            <h2>Formulário pra adcionar uma pessoa:</h2>
+            <form>
+                <div class="grid">
+                    <div>
+                        <label for="nome">
+                            Seu nomezinho*:
+                            <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="email">
+                            e-Mail*:
+                            <input type="text" id="email" name="email" placeholder="nome@dominio.com" required>
+                            <small>Divulgaremos >:)</small>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="dataNascimento">
+                            e-Mail*:
+                            <input type="date" id="dataNascimento" name="dataNascimento" required>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid">
+                    <fieldset>
+                        <legend>Gênero*</legend>
+                        <label for="masculino">
+                            <input type="radio" id="masculino" name="masculino" value="masculino">
+                            Masculino
+                        </label>
+                        <label for="feminino">
+                            <input type="radio" id="feminino" name="feminino" value="feminino">
+                            Feminino
+                        </label>
+                        <label for="naoInformar">
+                            <input type="radio" id="naoInformar" name="naoInformar" value="naoInformar">
+                            Não informar
+                        </label>
+                    </fieldset>
+                </div>
+                <br>
+                <div class="grid">
+                    <div>
+                        <button type="submit">Adcionar!</button>
+                    </div>
+                    <div>
+                        <button type="reset" class="secondary">Limpar</button>
+                    </div>
+                </div>
+            </form>
+            <h2>* Campo obrigatório</h2>
+        </div>
+    </body>
+</html>

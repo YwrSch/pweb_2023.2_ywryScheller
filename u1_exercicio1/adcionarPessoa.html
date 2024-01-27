@@ -9,14 +9,14 @@
         <div class="w3-bar w3-black w3-xlarge">
             <a href="index.html" class="w3-bar-item w3-button w3-mobile w3-black">Inicio</a>
             <a href="adcionarPessoa.html" class="w3-bar-item w3-button w3-mobile w3-red">Adcionar Pessoa</a>
-            <a href="listarPessoa.html" class="w3-bar-item w3-button w3-mobile w3-black">Listar Pessoas</a>
+            <a href="listarPessoas.html" class="w3-bar-item w3-button w3-mobile w3-black">Listar Pessoas</a>
             <a href="noticias.html" class="w3-bar-item w3-button w3-mobile w3-black w3-right">Notícias</a>
             <a href="sobre.html" class="w3-bar-item w3-button w3-mobile w3-black w3-right">Sobre o site</a>
             <a href="contato.html" class="w3-bar-item w3-button w3-mobile w3-black w3-right">Contato</a> 
         </div>
-        <div>
-            <h2>Formulário pra adcionar uma pessoa:</h2>
-            <form>
+        <div style="padding: 16px;">
+            <h1>Formulário pra adcionar uma pessoa:</h1>
+            <form action="adcionadaComSucesso.html">
                 <div class="grid">
                     <div>
                         <label for="nome">
@@ -28,7 +28,7 @@
                         <label for="email">
                             e-Mail*:
                             <input type="text" id="email" name="email" placeholder="nome@dominio.com" required>
-                            <small>Divulgaremos >:)</small>
+                            <small>Nunca divulgaremos :)</small>
                         </label>
                     </div>
                     <div>
@@ -39,21 +39,23 @@
                     </div>
                 </div>
                 <div class="grid">
-                    <fieldset border="0 px">
-                        <legend>Gênero*</legend>
-                        <label for="masculino">
-                            <input type="radio" id="masculino" name="masculino" value="masculino">
-                            Masculino
-                        </label>
-                        <label for="feminino">
-                            <input type="radio" id="feminino" name="feminino" value="feminino">
-                            Feminino
-                        </label>
-                        <label for="naoInformar">
-                            <input type="radio" id="naoInformar" name="naoInformar" value="naoInformar">
-                            Não informar
-                        </label>
-                    </fieldset>
+                    <div>
+                        <fieldset style="border: 0px;">
+                            <legend>Gênero*</legend>
+                            <label for="masculino">
+                                <input type="radio" id="masculino" name="genero" value="masculino"/>
+                                Masculino
+                            </label>
+                            <label for="feminino">
+                                <input type="radio" id="feminino" name="genero" value="feminino"/>
+                                Feminino
+                            </label>
+                            <label for="naoInformar">
+                                <input type="radio" id="naoInformar" name="genero" value="naoInformar"/>
+                                Não informar
+                            </label>
+                        </fieldset>
+                    </div>
                 </div>
                 <br>
                 <div class="grid">

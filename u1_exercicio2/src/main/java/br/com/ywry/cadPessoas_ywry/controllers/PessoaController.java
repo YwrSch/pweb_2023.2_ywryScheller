@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -29,7 +30,7 @@ public class PessoaController {
     }
 
     @GetMapping("/listarPessoas")
-    public ModelAndView listarPessoas(){
+    public ModelAndView listarPessoas() {
         List<Pessoa> todasAsPessoas = pessoaRepo.findAll();
         ModelAndView modelAndView = new ModelAndView("listarPessoas");
         modelAndView.addObject("todasAsPessoas", todasAsPessoas);
@@ -37,17 +38,22 @@ public class PessoaController {
     }
 
     @GetMapping("/adcionarPessoa")
-    public ModelAndView adcionarPessoaForm(){
+    public ModelAndView adcionarPessoaForm() {
         ModelAndView modelAndView = new ModelAndView("adcionarPessoa");
         modelAndView.addObject(new Pessoa());
         return modelAndView;
     }
 
     @PostMapping("/adcionarPessoa")
-    public String adcionarPessoa(Pessoa p){
+    public String adcionarPessoa(Pessoa p) {
         this.pessoaRepo.save(p);
         return "redirect:/listarPessoas";
     }
 
-
+    @GetMapping("/remover/{id}")
+    public ModelAndView removerPessoa(@PathVariable("id") long id){
+        Pessoa aRemover = pessoaRepo.findById(id).orElseThrow(()->new IllegalArgumentException("ID Inválido: " + id));
+        pessoaRepo.delete(aRemover);
+        return new ModelAndView("redirect:/listarPessoas");
+    }
 }

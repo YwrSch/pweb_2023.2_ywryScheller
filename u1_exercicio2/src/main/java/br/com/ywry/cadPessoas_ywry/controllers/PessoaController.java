@@ -56,4 +56,18 @@ public class PessoaController {
         pessoaRepo.delete(aRemover);
         return new ModelAndView("redirect:/listarPessoas");
     }
+
+    @GetMapping("/editar/{id}")
+    public ModelAndView editarPessoaForm(@PathVariable("id") long id){
+        Pessoa aEditar = pessoaRepo.findById(id).orElseThrow(()->new IllegalArgumentException("ID Inválido: " + id));
+        ModelAndView modelAndView = new ModelAndView("editarPessoa");
+        modelAndView.addObject(aEditar);
+        return modelAndView;
+    }
+
+    @PostMapping("/editar/{id}")
+    public String editarPessoa(@PathVariable("id") long id, Pessoa p){
+        this.pessoaRepo.save(p);
+        return "redirect:/listarPessoas";
+    }
 }
